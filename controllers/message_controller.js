@@ -28,11 +28,11 @@ exports.send_sms = (req, res) => {
         var candidateName = generateName(String.fromCharCode(fl));
         var date = new Date();
         var current_ts = date.getTime();
-        var date = "2019-03-01";
-        var time = "03:00";
+        var curr_date = new Date().format('m-d-Y');
+        var time = new Date().format('h:i:s');
         let message =
             "Hi ${candidateName}, we receive your hackathon code, we are testing for scalability. This message was " +
-            "sent in ${current_ts} on the ${date} at ${time}";
+            "sent in ${current_ts} on the ${curr_date} at ${time}";
             // ensure number starts with country code (in this case, Nigeria (234))
             number = number.startsWith('0') ? number.replace('0', '234') : number;
 
